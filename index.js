@@ -29,6 +29,7 @@ express.get('/users/:id', (req, res) => {
 
 express.post("/users", (req, res) => {
 	const user = {
+		name: req.body.name,
 		email: req.body.email,
 		password: req.body.password,
 		id: nextId,
@@ -40,8 +41,9 @@ express.post("/users", (req, res) => {
 });
 
 //função post
-express.post("/users/email", (req, res) => {
+express.post("/users/login", (req, res) => {
 	const user = {
+		name: req.body.name,
 		email: req.body.email,
 		password: req.body.password,
 	};
